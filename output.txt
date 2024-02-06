@@ -1,36 +1,0 @@
-<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="pragram" content="no-cache"><meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=IE9"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta id="metaDescription" name="description" content="èµç¹æ°æï¼citexsï¼è´åäºæé ä¸ä¸ªå¼æ¾çå¬çç§ç å¹³å°ï¼æä¾æç®æ£ç´¢ãSCIè¾å©åä½ãAIæç®å¤§æ°æ®ææä¸åæãSCIæåæ¥éãæ°åèªç¶ç§å­¦åºéç³è¯·ä¹¦ãå½å®¶èªç¶ç§å­¦åºéæ¥è¯¢ãèµè®¯è§£è¯»ç­ç§ç å·¥å·ãæ¬å¹³å°åºäºäººå·¥æºè½æ¨¡ååå¤§æ°æ®åæææ¯ï¼ä¸æ³¨å¼ååç±»æ»¡è¶³ä¸åä½¿ç¨åºæ¯ãæé«ç¨æ·ä½¿ç¨ä½éªçç§ç å·¥å·ï¼æ¨å¨è®©ç§ç å·¥ä½èæ´ç§å­¦ãæ´é«æãæ´ç²¾åå°æ¥è¯¢åè·åç®æ ä¿¡æ¯ï¼æå¤§ç¨åº¦ä¸ºç§ç äººåæä¾æºè½è¾å©å·¥å·æ¯æã"><meta name="keywords" content="citexsèµç¹æ°æ;æ°åèªç¶ç§å­¦åºéç³è¯·ä¹¦;æ ä¹¦åä½;èªç¶åºéåä½;èªç¶ç§å­¦åºé;å½èªç¶åºéæ¬å­;ç§ç å·¥å·;SCIåä½;è±æåä½;ä¸­ææ¶¦è²;ä¸­æéé;è±ææ¶¦è²;è¯¾é¢è®¾è®¡;é¢åè°ç ;ç ç©¶ç­ç¹;å½èªç¶;æç®ç»¼è¿°;æåæ¥è¯¢;æç®å¾ç;å¼æ¾"><link rel="icon" href="favicon.ico"><title>citexs-èµç¹æ°æç§ç å©æ</title><style type="text/css" media="print">.header-muen,.home-footer,.feedback, .scrollTotop {
-            display: none !important;
-        }
-        .printMt-0{
-            margin-top: 0px !important;
-        }
-        .printText{
-            display: block !important;
-        }
-        .printNone{
-            display: none !important;
-        }
-        .printW{
-            width: 1060px;
-        }
-        .titleCenter{
-            text-align: center !important;
-        }
-        @page {
-            size: auto;
-            margin:10mm;
-        }</style><link href="js/app.1706865258155.js" rel="preload" as="script"><link href="js/chunk-vendors.1706865258155.js" rel="preload" as="script"><link href="static/css/app.0a76a25f.css" rel="preload" as="style"><link href="static/css/chunk-vendors.7982ee13.css" rel="preload" as="style"><link href="static/css/chunk-vendors.7982ee13.css" rel="stylesheet"><link href="static/css/app.0a76a25f.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but citexs doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script>var _hmt = _hmt || [];
-        (function () {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?21490b61879a03667587a4b7869f9b95";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-        var _czc = _czc || [];</script><script type="speculationrules">{
-        "prerender": [
-            {
-                "source": "list",
-                "urls": ["https://www.citexs.com/"]
-            }
-        ]
-    }</script><script src="js/chunk-vendors.1706865258155.js"></script><script src="js/app.1706865258155.js"></script></body></html>
