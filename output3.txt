@@ -1,0 +1,326 @@
+<!DOCTYPE html><html lang="" class="nprogress-busy"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="pragram" content="no-cache"><meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=IE9"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta id="metaDescription" name="description" content="基于广义地标的室内行人混合感知导航方法"><meta name="keywords" content="基于广义地标的室内行人混合感知导航方法"><link rel="icon" href="favicon.ico"><title>基于广义地标的室内行人混合感知导航方法|全球科研基金</title><style type="text/css" media="print">.header-muen,.home-footer,.feedback, .scrollTotop {
+            display: none !important;
+        }
+        .printMt-0{
+            margin-top: 0px !important;
+        }
+        .printText{
+            display: block !important;
+        }
+        .printNone{
+            display: none !important;
+        }
+        .printW{
+            width: 1060px;
+        }
+        .titleCenter{
+            text-align: center !important;
+        }
+        @page {
+            size: auto;
+            margin:10mm;
+        }</style><link href="js/app.1706865258155.js" rel="preload" as="script"><link href="js/chunk-vendors.1706865258155.js" rel="preload" as="script"><link href="static/css/app.0a76a25f.css" rel="preload" as="style"><link href="static/css/chunk-vendors.7982ee13.css" rel="preload" as="style"><link href="static/css/chunk-vendors.7982ee13.css" rel="stylesheet"><link href="static/css/app.0a76a25f.css" rel="stylesheet"><style>.vue-puzzle-vcode {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 200ms;
+  transition: opacity 200ms;
+}
+.vue-puzzle-vcode.show_ {
+  opacity: 1;
+  pointer-events: auto;
+}
+.vue-auth-box_ {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 20px;
+  background: #fff;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.vue-auth-box_ .auth-body_ {
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.vue-auth-box_ .auth-body_ .loading-box_ {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 20;
+  opacity: 1;
+  -webkit-transition: opacity 200ms;
+  transition: opacity 200ms;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+.vue-auth-box_ .auth-body_ .loading-box_.hide_ {
+  opacity: 0;
+  pointer-events: none;
+}
+.vue-auth-box_ .auth-body_ .loading-box_.hide_ .loading-gif_ span {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.vue-auth-box_ .auth-body_ .loading-box_ .loading-gif_ {
+  -webkit-box-flex: 0;
+  -webkit-flex: none;
+          flex: none;
+  height: 5px;
+  line-height: 0;
+}
+@-webkit-keyframes load {
+0% {
+    opacity: 1;
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+}
+100% {
+    opacity: 0.2;
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+}
+}
+@keyframes load {
+0% {
+    opacity: 1;
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+}
+100% {
+    opacity: 0.2;
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+}
+}
+.vue-auth-box_ .auth-body_ .loading-box_ .loading-gif_ span {
+  display: inline-block;
+  width: 5px;
+  height: 100%;
+  margin-left: 2px;
+  border-radius: 50%;
+  background-color: #888;
+  -webkit-animation: load 1.04s ease infinite;
+          animation: load 1.04s ease infinite;
+}
+.vue-auth-box_ .auth-body_ .loading-box_ .loading-gif_ span:nth-child(1) {
+  margin-left: 0;
+}
+.vue-auth-box_ .auth-body_ .loading-box_ .loading-gif_ span:nth-child(2) {
+  -webkit-animation-delay: 0.13s;
+          animation-delay: 0.13s;
+}
+.vue-auth-box_ .auth-body_ .loading-box_ .loading-gif_ span:nth-child(3) {
+  -webkit-animation-delay: 0.26s;
+          animation-delay: 0.26s;
+}
+.vue-auth-box_ .auth-body_ .loading-box_ .loading-gif_ span:nth-child(4) {
+  -webkit-animation-delay: 0.39s;
+          animation-delay: 0.39s;
+}
+.vue-auth-box_ .auth-body_ .loading-box_ .loading-gif_ span:nth-child(5) {
+  -webkit-animation-delay: 0.52s;
+          animation-delay: 0.52s;
+}
+.vue-auth-box_ .auth-body_ .info-box_ {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  overflow: hidden;
+  font-size: 13px;
+  background-color: #83ce3f;
+  opacity: 0;
+  -webkit-transform: translateY(24px);
+          transform: translateY(24px);
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+  color: #fff;
+  z-index: 10;
+}
+.vue-auth-box_ .auth-body_ .info-box_.show {
+  opacity: 0.95;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.vue-auth-box_ .auth-body_ .info-box_.fail {
+  background-color: #ce594b;
+}
+.vue-auth-box_ .auth-body_ .auth-canvas2_ {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100%;
+  z-index: 2;
+}
+.vue-auth-box_ .auth-body_ .auth-canvas3_ {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: opacity 600ms;
+  transition: opacity 600ms;
+  z-index: 3;
+}
+.vue-auth-box_ .auth-body_ .auth-canvas3_.show {
+  opacity: 1;
+}
+.vue-auth-box_ .auth-body_ .flash_ {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 3;
+}
+.vue-auth-box_ .auth-body_ .flash_.show {
+  -webkit-transition: -webkit-transform 600ms;
+  transition: -webkit-transform 600ms;
+  transition: transform 600ms;
+  transition: transform 600ms, -webkit-transform 600ms;
+}
+.vue-auth-box_ .auth-body_ .reset_ {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 35px;
+  height: auto;
+  z-index: 12;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 200ms;
+  transition: -webkit-transform 200ms;
+  transition: transform 200ms;
+  transition: transform 200ms, -webkit-transform 200ms;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+.vue-auth-box_ .auth-body_ .reset_:hover {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+.vue-auth-box_ .auth-control_ .range-box {
+  position: relative;
+  width: 100%;
+  background-color: #eef1f8;
+  margin-top: 20px;
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(240, 240, 240, 0.6) inset;
+}
+.vue-auth-box_ .auth-control_ .range-box .range-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: #b7bcd1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  width: 100%;
+}
+.vue-auth-box_ .auth-control_ .range-box .range-slider {
+  position: absolute;
+  height: 100%;
+  width: 50px;
+  background-color: rgba(106, 160, 255, 0.8);
+  border-radius: 3px;
+}
+.vue-auth-box_ .auth-control_ .range-box .range-slider .range-btn {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  right: 0;
+  width: 50px;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0 4px #ccc;
+  cursor: pointer;
+}
+.vue-auth-box_ .auth-control_ .range-box .range-slider .range-btn > div {
+  width: 0;
+  height: 40%;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+  border: solid 1px #6aa0ff;
+}
+.vue-auth-box_ .auth-control_ .range-box .range-slider .range-btn > div:nth-child(2) {
+  margin: 0 4px;
+}
+.vue-auth-box_ .auth-control_ .range-box .range-slider .range-btn:hover > div:first-child,
+.vue-auth-box_ .auth-control_ .range-box .range-slider .range-btn.isDown > div:first-child {
+  border: solid 4px transparent;
+  height: 0;
+  border-right-color: #6aa0ff;
+}
+.vue-auth-box_ .auth-control_ .range-box .range-slider .range-btn:hover > div:nth-child(2),
+.vue-auth-box_ .auth-control_ .range-box .range-slider .range-btn.isDown > div:nth-child(2) {
+  border-width: 3px;
+  height: 0;
+  border-radius: 3px;
+  margin: 0 6px;
+  border-right-color: #6aa0ff;
+}
+.vue-auth-box_ .auth-control_ .range-box .range-slider .range-btn:hover > div:nth-child(3),
+.vue-auth-box_ .auth-control_ .range-box .range-slider .range-btn.isDown > div:nth-child(3) {
+  border: solid 4px transparent;
+  height: 0;
+  border-left-color: #6aa0ff;
+}
+.vue-puzzle-overflow {
+  overflow: hidden !important;
+}
+</style><link rel="stylesheet" type="text/css" href="static/css/chunk-6beb4083.7de623b2.css"><script charset="utf-8" src="js/chunk-6beb4083.1706865258155.js"></script><script charset="utf-8" src="js/chunk-88ba78ca.1706865258155.js"></script><script charset="utf-8" src="js/chunk-707d3c42.1706865258155.js"></script><script charset="utf-8" src="js/chunk-98608146.1706865258155.js"></script><link rel="stylesheet" type="text/css" href="static/css/chunk-ad3ed524.3b6a19dc.css"><script charset="utf-8" src="js/chunk-ad3ed524.1706865258155.js"></script></head><body class="el-popup-parent--hidden"><noscript><strong>We're sorry but citexs doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"><div data-v-8903885e=""><div data-v-2ac37c46="" data-v-8903885e="" class="header-muen"><div data-v-2ac37c46="" class="muen el-row bgcolor_blue"><div data-v-2ac37c46="" class="muen_div"><div data-v-2ac37c46="" class="logo"><h1 data-v-2ac37c46="" class="ds-flex" style="display: none;"><a data-v-2ac37c46="" href="/" class="logoLink topEditLoGo router-link-active" style="width: 334px; height: 41px; line-height: 41px; display: none;"> 赛特新思&amp;topEdit </a><a data-v-2ac37c46="" href="/" class="logoLink topEditLoGo router-link-active" style="width: 334px; height: 41px; line-height: 41px;">赛特新思&amp;topEdit</a></h1><h1 data-v-2ac37c46="" class="ds-flex"><a data-v-2ac37c46="" href="/" class="logoLink router-link-active" style="display: none;"> 赛特新思 </a><a data-v-2ac37c46="" href="/" class="logoLink router-link-active" style="--logoBg: url(data:image/png;base64,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);">赛特新思</a></h1></div><div data-v-2ac37c46=""><ul data-v-2ac37c46="" class="muen_ul"><li data-v-2ac37c46="" class="oneli"><a data-v-2ac37c46="" href="/allSearch" class="one isNEW">文献检索 &amp; 分析 <!----></a><div data-v-2ac37c46="" class="muen_li_children"><ul data-v-2ac37c46="" class="flex-center flex-j-w children"><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/allSearch" class="isNEW isChildNEW"><span data-v-2ac37c46="" class="children_title">文献综合数据库</span><span data-v-2ac37c46="">Comprehensive Literature Database</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/Search" class=""><span data-v-2ac37c46="" class="children_title">PubMed文献数据库</span><span data-v-2ac37c46="">PubMed Literature Database</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/BioRxiv" class=""><span data-v-2ac37c46="" class="children_title">预印本文献数据库</span><span data-v-2ac37c46="">preprint Literature Database</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/Paperpicky" class=""><span data-v-2ac37c46="" class="children_title">文献调研分析</span><span data-v-2ac37c46="">Paper-Linker</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/Summary" class=""><span data-v-2ac37c46="" class="children_title">文献计量分析</span><span data-v-2ac37c46="">Bibliometric analysis</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/LiteImage" class=""><span data-v-2ac37c46="" class="children_title">文献图片数据库</span><span data-v-2ac37c46="">Literature Images Database</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="https://www.shanghaiip.cn/search/#/home" target="_blank" rel="noopener noreferrer" class="isNEW isChildNEW"><span data-v-2ac37c46="" class="children_title">专利检索</span><span data-v-2ac37c46="">Patent</span></a></li></ul></div></li><li data-v-2ac37c46="" class="oneli"><a data-v-2ac37c46="" href="/Writing" class="one">SCI写作助手 <!----></a><div data-v-2ac37c46="" class="muen_li_children"><ul data-v-2ac37c46="" class="flex-center flex-j-w children"><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/Writing" class=""><span data-v-2ac37c46="" class="children_title">结构化写作</span><span data-v-2ac37c46="">Structured Writing</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/AIHelp" class=""><span data-v-2ac37c46="" class="children_title">文献语料库</span><span data-v-2ac37c46="">Literature Corpus</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/Editing" class=""><span data-v-2ac37c46="" class="children_title">英文写作</span><span data-v-2ac37c46="">writing (English)</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/chineseEditing" class=""><span data-v-2ac37c46="" class="children_title">中文写作</span><span data-v-2ac37c46="">writing (Chinese)</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/Trans" class=""><span data-v-2ac37c46="" class="children_title">在线翻译</span><span data-v-2ac37c46="">Online Translation</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/TitleGeneration" class="isNEW isChildNEW"><span data-v-2ac37c46="" class="children_title">Title生成器</span><span data-v-2ac37c46="">Title For Me</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/review" class=""><span data-v-2ac37c46="" class="children_title">审稿人回信</span><span data-v-2ac37c46="">Reviewers reply</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/Reporting_Guideline" class=""><span data-v-2ac37c46="" class="children_title">医学写作</span><span data-v-2ac37c46="">Reporting Guideline</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/Skills" class=""><span data-v-2ac37c46="" class="children_title">写作技巧</span><span data-v-2ac37c46="">Writing Skills</span></a></li></ul></div></li><li data-v-2ac37c46="" class="oneli"><a data-v-2ac37c46="" href="/Editing" class="one isNEW">润色 &amp; 降重 <!----></a><div data-v-2ac37c46="" class="muen_li_children"><ul data-v-2ac37c46="" class="flex-center flex-j-w children"><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/Editing" class=""><span data-v-2ac37c46="" class="children_title">英文润色</span><span data-v-2ac37c46="">English Editing</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/EnglishParaphrasing" class="isNEW isChildNEW"><span data-v-2ac37c46="" class="children_title">英文降重</span><span data-v-2ac37c46="">English Paraphrase</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/Writing-Editing" class=""><span data-v-2ac37c46="" class="children_title">边写边润</span><span data-v-2ac37c46="">Writing and Editing</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/chineseEditing" class=""><span data-v-2ac37c46="" class="children_title">中文润色</span><span data-v-2ac37c46="">Chinese Editing</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/ChineseParaphrasing" class=""><span data-v-2ac37c46="" class="children_title">中文降重</span><span data-v-2ac37c46="">Chinese Paraphrase</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/reduction" class=""><span data-v-2ac37c46="" class="children_title">智能改写</span><span data-v-2ac37c46="">Rewrite</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/sci_topedit" class=""><span data-v-2ac37c46="" class="children_title">查重 &amp; 人工润色</span><span data-v-2ac37c46="">iThenticate</span></a></li></ul></div></li><li data-v-2ac37c46="" class="oneli"><a data-v-2ac37c46="" href="/Summary" class="one">课题调研 <!----></a><div data-v-2ac37c46="" class="muen_li_children"><ul data-v-2ac37c46="" class="flex-center flex-j-w children"><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/AuxiTopic" class=""><span data-v-2ac37c46="" class="children_title">研究选题</span><span data-v-2ac37c46="">PKG Analysis</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/AITopicMining" class=""><span data-v-2ac37c46="" class="children_title">课题空白点挖掘</span><span data-v-2ac37c46="">Topic&nbsp;Mining</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/Paperpicky" class=""><span data-v-2ac37c46="" class="children_title">文献调研分析</span><span data-v-2ac37c46="">Paper-Linker</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/TopicCompass" class=""><span data-v-2ac37c46="" class="children_title">课题罗盘</span><span data-v-2ac37c46="">Topic Compass</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/Summary" class=""><span data-v-2ac37c46="" class="children_title">文献计量分析(基础版)</span><span data-v-2ac37c46="">Bibliometric analysis</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/Advanced" class=""><span data-v-2ac37c46="" class="children_title">文献计量分析(定制版)</span><span data-v-2ac37c46="">Bibliometric analysis Pro</span></a></li></ul></div></li><li data-v-2ac37c46="" class="oneli"><a data-v-2ac37c46="" href="/ExperimentalExample" class="one">实验设计 <!----></a><div data-v-2ac37c46="" class="muen_li_children"><ul data-v-2ac37c46="" class="flex-center flex-j-w children"><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/ExperimentalExample" class="isNEW isChildNEW"><span data-v-2ac37c46="" class="children_title">实验方案设计</span><span data-v-2ac37c46="">Experimental Design</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/protocolMethod" class=""><span data-v-2ac37c46="" class="children_title">Protocol &amp; Method</span><span data-v-2ac37c46="">Protocol &amp; Method</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/PaperMaterials" class=""><span data-v-2ac37c46="" class="children_title">实验材料查找</span><span data-v-2ac37c46="">Paper Materials</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/expMethod" class=""><span data-v-2ac37c46="" class="children_title">实验方法(生物医学)</span><span data-v-2ac37c46="">method</span></a></li></ul></div></li><li data-v-2ac37c46="" class="oneli active"><a data-v-2ac37c46="" href="/nsfc" class="one isNEW">科研基金 &amp; 专利 <!----></a><div data-v-2ac37c46="" class="muen_li_children"><ul data-v-2ac37c46="" class="flex-center flex-j-w children"><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/FundAssistant" class="isNEW isChildNEW"><span data-v-2ac37c46="" class="children_title">基金写作助手</span><span data-v-2ac37c46="">Fund Writing Assistant</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/nsfc" class=""><span data-v-2ac37c46="" class="children_title">国家自然科学基金</span><span data-v-2ac37c46="">NSFC</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/provinceNsfc" class=""><span data-v-2ac37c46="" class="children_title">地方自然科学基金</span><span data-v-2ac37c46="">Local Foundation Database</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/SocialScienceFund" class="isNEW isChildNEW"><span data-v-2ac37c46="" class="children_title">社会科学基金</span><span data-v-2ac37c46="">National&nbsp;Social&nbsp;Science&nbsp;Fund</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/globalNsfc" class=""><span data-v-2ac37c46="" class="children_title">海外科研基金</span><span data-v-2ac37c46="">Global Project</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/NsfcInformation" class="isNEW isChildNEW"><span data-v-2ac37c46="" class="children_title">基金资讯</span><span data-v-2ac37c46="">Information</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="https://www.shanghaiip.cn/search/#/home" target="_blank" rel="noopener noreferrer" class=""><span data-v-2ac37c46="" class="children_title">专利检索</span><span data-v-2ac37c46="">Patent</span></a></li></ul></div></li><li data-v-2ac37c46="" class="oneli"><a data-v-2ac37c46="" href="/journalQuery" class="one">期刊查选 <!----></a><div data-v-2ac37c46="" class="muen_li_children"><ul data-v-2ac37c46="" class="flex-center flex-j-w children"><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/journalQuery" class=""><span data-v-2ac37c46="" class="children_title">SCI期刊查询</span><span data-v-2ac37c46="">Journal of query</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/journalAdvice" class=""><span data-v-2ac37c46="" class="children_title">SCI智能选刊</span><span data-v-2ac37c46="">Journal of advice</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/journalEarlyWarning" class=""><span data-v-2ac37c46="" class="children_title">期刊预警</span><span data-v-2ac37c46="">Warning Journal</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/journalChinaQuery" class=""><span data-v-2ac37c46="" class="children_title">中文期刊</span><span data-v-2ac37c46="">Chinese Journal</span></a></li></ul></div></li><li data-v-2ac37c46="" class="oneli"><a data-v-2ac37c46="" href="/guideline" class="one">生物医学专题 <!----></a><div data-v-2ac37c46="" class="muen_li_children"><ul data-v-2ac37c46="" class="flex-center flex-j-w children"><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="https://ai.citexs.com/homePath?GenDomakey=R3lKGShju0FR1qcpbi3l42z76df47ObohIQbYNjFuqf/2FsPltn714dRnuh6J8s7" target="_blank" rel="noopener noreferrer" class="isNEW isChildNEW"><span data-v-2ac37c46="" class="children_title">基因 &amp; 疾病多维分析</span><span data-v-2ac37c46="">GenDoma</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/guideline" class=""><span data-v-2ac37c46="" class="children_title">医学指南</span><span data-v-2ac37c46="">Medical Guideline</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/expMethod" class=""><span data-v-2ac37c46="" class="children_title">实验方法</span><span data-v-2ac37c46="">method</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/PaperMaterials" class=""><span data-v-2ac37c46="" class="children_title">实验材料查找</span><span data-v-2ac37c46="">Paper Materials</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/AntiImage" class=""><span data-v-2ac37c46="" class="children_title">抗体检测图片</span><span data-v-2ac37c46="">Antibody Image</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/Dictionary" class=""><span data-v-2ac37c46="" class="children_title">生物医学大词典</span><span data-v-2ac37c46="">Dictionary</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/BioTechTraining" class=""><span data-v-2ac37c46="" class="children_title">实验技能线下培训</span><span data-v-2ac37c46="">BioTech Training</span></a></li><li data-v-2ac37c46=""><a data-v-2ac37c46="" href="/information" class=""><span data-v-2ac37c46="" class="children_title">资讯 &amp; 解读</span><span data-v-2ac37c46="">Information</span></a></li></ul></div></li><li data-v-2ac37c46="" class="oneli"><a data-v-2ac37c46="" href="/login" class="one">登录/注册</a></li></ul></div></div></div></div><div data-v-8903885e="" class="w-1440 mt-100 bg-f8"><div data-v-8903885e="" class="w-1440-auto"><div data-v-8903885e="" class="el-row"><div data-v-8903885e="" class="pl-20 pr-20 el-col el-col-18"><div data-v-8903885e="" class="bg-white pl-10 pr-10 pb-20"><h2 data-v-8903885e="" class="text-center">基于广义地标的室内行人混合感知导航方法</h2><!----><div data-v-8903885e="" class="top-2 bottom-2 detailBox"><div data-v-8903885e="" class="flex-j detailBox_row"><div data-v-8903885e="" class="text-center detailBox_col_label detailBox_col flex-center">项目批准号</div><div data-v-8903885e="" class="flex-1 detailBox_col text-indent10"> 41801376 <span data-v-8903885e="" title="点击查看结题报告" class="left-1 fs14 color-f rounded-4 cursor_p bg-186" style="padding: 4px;"> 结题报告 <i data-v-8903885e="" class="el-icon-search" style="text-indent: 0px;"></i></span></div></div><div data-v-8903885e="" class="flex-j detailBox_row"><div data-v-8903885e="" class="text-center detailBox_col_label detailBox_col flex-center ">级别</div><div data-v-8903885e="" class="flex-1 detailBox_col text-indent10">国自然</div></div><div data-v-8903885e="" class="flex-j detailBox_row"><div data-v-8903885e="" class="text-center detailBox_col_label detailBox_col flex-center">资助类别</div><div data-v-8903885e="" class="flex-1 detailBox_col text-indent10">青年科学基金项目</div></div><div data-v-8903885e="" class="flex-j detailBox_row"><div data-v-8903885e="" class="text-center detailBox_col_label detailBox_col flex-center">负责人</div><div data-v-8903885e="" class="flex-1 detailBox_col text-indent10">刘涛</div></div><div data-v-8903885e="" class="flex-j detailBox_row"><div data-v-8903885e="" class="text-center detailBox_col_label detailBox_col flex-center">依托单位</div><div data-v-8903885e="" class="flex-1 detailBox_col text-indent10">河南财经政法大学</div></div><div data-v-8903885e="" class="flex-j detailBox_row"><div data-v-8903885e="" class="text-center detailBox_col_label detailBox_col flex-center"> 批准年份 </div><div data-v-8903885e="" class="flex-1 detailBox_col text-indent10">2018</div></div><div data-v-8903885e="" class="flex-j detailBox_row"><div data-v-8903885e="" class="text-center detailBox_col_label detailBox_col flex-center">起止时间</div><div data-v-8903885e="" class="flex-1 detailBox_col text-indent10">2019-2021</div></div><div data-v-8903885e="" class="flex-j detailBox_row"><div data-v-8903885e="" class="text-center detailBox_col_label detailBox_col flex-center">批准金额</div><div data-v-8903885e="" class="flex-1 detailBox_col text-indent10">26.0 万</div></div><div data-v-8903885e="" class="flex-j detailBox_row"><div data-v-8903885e="" class="text-center detailBox_col_label detailBox_col flex-center">摘要</div><div data-v-8903885e="" class="flex-1 detailBox_col text-indent10"> 室内环境下的多维度信号特征及变化规律具有明显的空间特性，对于智能移动终端的行人导航具有重要的空间标识意义。然而目前GIS导航理论缺乏对多维度信号特征的分类体系与建模方法，难以支撑多样化室内场景对于导航地标的科学建模与分析利用。本项目主要以多维度信号特征规律拓展行人导航地标理论，针对多维度信号特征广义地标分类体系与时空建模、基于广义地标的行人混合感知导航模型等关键科学问题开展研究，提出基于智能移动终端的广义地标识别方法、融合视觉与惯性信息的广义地标空间位置标注方法、基于广义地标与轨迹匹配的混合感知导航方法等内容，从而发展出一个普适性更强的行人混合感知导航方法体系。本课题的研究成果将提高行人导航的复杂环境适应能力、促进GIS与人工智能理论方法体系的交叉融合，降低“无所不在”位置服务对基础设施的依赖性，提高行人导航应用的稳定性和舒适性。 </div></div><div data-v-8903885e="" class="flex-j detailBox_row"><div data-v-8903885e="" class="text-center detailBox_col_label detailBox_col flex-center">结题摘要</div><div data-v-8903885e="" class="flex-1 detailBox_col text-indent10"> 针对目前地理信息系统导航理论缺乏对多维度信号特征的分类体系与建模方法，难以支撑多样化室内场景对于导航地标的科学建模与分析利用等问题，本项目重点围绕多维度信息融合广义地标模型构建、视觉与惯性融合的广义地标空间位置标注、基于广义地标与轨迹匹配的行人定位导航等三个方面内容展开研究。针对室内典型结构环境下采集到的多源信号进行特征提取和模型训练，构建了室内结构地标分类模型；研究了基于智能手机的室内空间结构自动识别方法，提出了基于结构地标序列匹配的行人定位方法，结果表明：利用智能手机识别室内空间结构的准确率超过90%，在识别地标基础上进行空间位置匹配的准确率为92%，基于结构地标序列匹配的定位误差不超过1.2米。提出了视觉与惯性集成的行人相对运动轨迹恢复方法，提高了传统惯性航位推算（PDR）定位方法的准确性；研究了基于室内参考点和众包行人轨迹的空间位置标注方法，可以将众包轨迹采样点相对位置转换到室内坐标系下，实现了地标位置自动标注和动态更新，实验结果表明，基于众包轨迹采样点的空间位置标注平均误差为0.6米。根据不同场景下的定位需求和多源信号的可获取性，将行人室内定位分为主动定位、被动定位和协同定位。提出了室内空间约束条件下的行人主动视觉定位方法，主要利用行人拍摄的室内图像进行匹配定位；提出了基于单目相机的行人被动定位方法，利用固定相机拍摄视频影像进行行人目标检测，构建像素坐标转换模型，实现对多个目标行人的连续跟踪定位；提出了被动视觉与主动惯性协同的室内定位方法，利用视觉特征和惯性特征进行互匹配识别多目标行人身份，将惯性定位结果补充视觉盲区情况下的行人定位结果。本项目的研究成果为行人定位导航、位置服务领域的发展提供了理论依据，提高了行人导航应用的稳定性和舒适性。 </div></div><div data-v-8903885e="" class="flex-j detailBox_row"><div data-v-8903885e="" class="text-center detailBox_col_label detailBox_col flex-center">关键词</div><div data-v-8903885e="" class="flex-1 detailBox_col text-indent10">行人导航;室内定位;地标</div></div></div></div><div data-v-8903885e="" class="nsfcDetailTab el-tabs el-tabs--top el-loading-parent--relative" element-loading-text="加载中..."><div class="el-tabs__header is-top"><div class="el-tabs__nav-wrap is-top"><div class="el-tabs__nav-scroll"><div role="tablist" class="el-tabs__nav is-top" style="transform: translateX(0px);"><div class="el-tabs__active-bar is-top" style="width: 225px; transform: translateX(0px);"></div><div id="tab-Cn" aria-controls="pane-Cn" role="tab" aria-selected="true" tabindex="0" class="el-tabs__item is-top is-active">相似国家自然基金(NSFC)</div><div id="tab-province" aria-controls="pane-province" role="tab" tabindex="-1" class="el-tabs__item is-top">相似地方自然基金</div><div id="tab-global" aria-controls="pane-global" role="tab" tabindex="-1" class="el-tabs__item is-top">海外相似基金</div></div></div></div></div><div class="el-tabs__content"><!----><!----><!----><div data-v-8903885e="" role="tabpanel" id="pane-Cn" aria-labelledby="tab-Cn" class="el-tab-pane"><div data-v-8903885e=""><p data-v-8903885e="" class="text-center">暂无数据~</p></div></div><div data-v-8903885e="" role="tabpanel" aria-hidden="true" id="pane-province" aria-labelledby="tab-province" class="el-tab-pane" style="display: none;"></div><div data-v-8903885e="" role="tabpanel" aria-hidden="true" id="pane-global" aria-labelledby="tab-global" class="el-tab-pane" style="display: none;"><div data-v-8903885e=""><p data-v-8903885e="" class="text-center">暂无数据~</p></div></div></div><div class="el-loading-mask" style=""><div class="el-loading-spinner"><svg viewBox="25 25 50 50" class="circular"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg><p class="el-loading-text">加载中...</p></div></div></div></div><div data-v-8903885e="" class="el-col el-col-6"><div data-v-8903885e=""><div data-v-8903885e="" class="p-20 bg-white bottom-2"><p data-v-8903885e="" class="right-1"> 负责人：<span data-v-8903885e="" class="fs18 font-w color-186">刘涛</span></p><p data-v-8903885e="" class="right-1"> 项目数量：<span data-v-8903885e="" class="fs18 font-w color-186">1</span></p><p data-v-8903885e="" class="right-1"> 经费总额：<span data-v-8903885e="" class="fs18 font-w color-186">￥26.0万</span></p><!----></div><div data-v-8903885e="" class="bg-white bottom-2"><div data-v-8903885e="" class="pl-10 height-line-var border-left-var-w-c" style="--h: 40px; --w: 4px; --color: #186078;"><span data-v-8903885e="">经费走势图</span></div><div data-v-8903885e="" id="fundingChart"><div style="position:relative;"><canvas width="270" height="260" style="width: 270px; height: 260px; display: inline-block; vertical-align: middle;"></canvas></div></div></div><div data-v-8903885e="" class="bg-white bottom-2"><div data-v-8903885e="" class="pl-10 height-line-var border-left-var-w-c" style="--h: 40px; --w: 4px; --color: #186078;"><span data-v-8903885e="">项目数量</span></div><div data-v-8903885e="" id="numberProjects"><div style="position:relative;"><canvas width="270" height="260" style="width: 270px; height: 260px; display: inline-block; vertical-align: middle;"></canvas></div></div></div></div><div data-v-8903885e="" class="text-center"></div></div></div></div></div><div data-v-d93a8702="" data-v-8903885e="" class="w-1440 home-footer"><div data-v-d93a8702="" class="pb-20 w-1440-auto flex-between el-row" style="padding-top: 20px;"><div data-v-d93a8702="" class="footer-div el-col el-col-9"><div data-v-d93a8702="" class="footer-title"><p data-v-d93a8702=""><b data-v-d93a8702="">ABOUT US</b></p><p data-v-d93a8702=""> 赛特新思（citexs）致力于打造一个一站式科研平台，提供文献检索、SCI辅助写作、文献大数据挖掘与分析、SCI期刊查选、国家自然科学基金查询、资讯解读等科研工具。本平台基于人工智能模型和大数据分析技术，专注开发各类满足不同使用场景、提高用户使用体验的科研工具，旨在让科研工作者更科学、更高效、更精准地查询及获取目标信息，最大程度为科研人员提供智能辅助工具支持。 </p><p data-v-d93a8702="" class="top-1"><b data-v-d93a8702="">声明</b></p><p data-v-d93a8702="">本平台不收集用户的任何检索内容</p><div data-v-d93a8702="" class="flex-c-a iconfont-module"><div data-v-d93a8702="" class="space"><i data-v-d93a8702="" class="iconfont icon-weixindenglufanbai"></i><div data-v-d93a8702="" class="iconImg"><img data-v-d93a8702="" src="static/img/wxer.7c62645f.png" alt=""></div></div><div data-v-d93a8702=""><a data-v-d93a8702="" href="/map" class="color-186" target="_blank" rel="noopener noreferrer">网站地图</a></div></div></div></div><div data-v-d93a8702="" class="pt-10 el-col el-col-7"></div><div data-v-d93a8702="" class="flex-center el-col el-col-8"><img data-v-d93a8702="" src="static/img/wiexgzh-footer.47c8ece4.png" alt="" style="width: 258px;"></div></div><div data-v-d93a8702="" class="el-row"><div data-v-d93a8702="" class="footer-bottom el-col el-col-24"><span data-v-d93a8702="">© 2022 citexs.com. All right reserved. <a data-v-d93a8702="" href="https://beian.miit.gov.cn/" target="_blank">鄂ICP备2021008029号-1</a><img data-v-d93a8702="" src="static/img/ban.d0289dc0.png" style="vertical-align: sub;"><a data-v-d93a8702="" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42018502005184" target="_blank">鄂公网安备 42018502005184号</a></span><span data-v-d93a8702=""><a data-v-d93a8702="" href="/privacyPolicy" class="" target="_blank">隐私政策</a></span></div></div></div><div data-v-06e59b06="" data-v-8903885e="" class="el-dialog__wrapper" style="display: none;"><div role="dialog" aria-modal="true" aria-label="项目简介" class="el-dialog" style="margin-top: 15vh; width: 50%;"><div class="el-dialog__header"><span class="el-dialog__title">项目简介</span><button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div><!----><div class="el-dialog__footer"><span data-v-06e59b06="" class="dialog-footer"><button data-v-06e59b06="" type="button" class="el-button el-button--default"><!----><!----><span>取 消</span></button></span></div></div></div><div data-v-305676bd="" data-v-8903885e="" class="el-dialog__wrapper" style="display: none;"><div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog el-dialog--center" style="margin-top: 15vh; width: 90%;"><div class="el-dialog__header"><div data-v-305676bd=""><h1 data-v-305676bd="">  <span data-v-305676bd="" class="span_view"><a data-v-305676bd="" href="/journalHistory" class="mr-2 font-w color-409EFF fs14" target="_blank" rel="noopener noreferrer"><i data-v-305676bd="" class="el-icon-search"></i> 详情 </a></span></h1></div><button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div><!----><!----></div></div></div><div class="text-center display-n printText"><p>citexs-赛特新思科研无忧，智汇一站</p><p>https://www.citexs.com/</p></div><div class="feedback"><div class="flex-between-c flex-d-c feedback_fk feedbackBox showBox"><span>在线</span><span>客服</span></div><div class="flex-between-c flex-d-c feedback_fk feedbackBox showBox"><span>功能</span><span>说明</span></div><div class="qrCode feedbackBox showBox"><i class="iconfont icon-qrcode"></i><div id="rwm_show" class="rwm_show"></div></div><div class="donation bg-186 feedbackBox showBox"> 引用 </div><div class="feedbackIcon feedbackBox"><img src="static/img/logoImg.4375b2ee.png" class="w-100"></div></div><div class="scrollTotop" style="display: none;"> TOP </div><div data-v-708bd73b=""><div data-v-708bd73b="" class="el-dialog__wrapper feedbackDialog" style="display: none;"><div role="dialog" aria-modal="true" aria-label="反馈" class="el-dialog" style="margin-top: 15vh; width: 30%;"><div class="el-dialog__header"><span class="el-dialog__title">反馈</span><button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div><!----><!----></div></div><div data-v-d2ac5df6="" data-v-708bd73b="" class="el-dialog__wrapper feedbackDialog" style="display: none;"><div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog el-dialog--center" style="margin-top: 15vh; width: 700px;"><div class="el-dialog__header"><p data-v-d2ac5df6="" style="font-size: 20px;"> 订单查补 </p><button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div><!----><div class="el-dialog__footer"><span data-v-d2ac5df6="" class="dialog-footer"><button data-v-d2ac5df6="" type="button" class="el-button el-button--default"><!----><!----><span>取 消</span></button><button data-v-d2ac5df6="" type="button" class="el-button el-button--primary"><!----><!----><span>确 定</span></button></span></div></div></div></div><div data-v-1a258715="" class="el-dialog__wrapper dialogCenter dialogHide_header_footer dialogHide_body_padding_0 dialogBg_transparent" style="z-index: 2001;"><div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog el-dialog--center" style="margin-top: 15vh; width: calc(32.5vw);"><div class="el-dialog__header"><p data-v-1a258715="" style="font-size: 20px;"><i data-v-1a258715="" class="iconfont icon-shengji_icon_shenhe fs20"></i>新功能上线</p><!----></div><div class="el-dialog__body"><div data-v-1a258715=""><div data-v-1a258715="" class="text-center position-r h-100"><div data-v-1a258715="" class="h-100"><div data-v-1a258715="" class="el-image cursor_p rounded-8 info_jx_img"><img src="static/img/nsfcDesign.63a8aa8b.jpg" class="el-image__inner"><!----></div></div><div data-v-1a258715="" class="cursor_p closeIcon"><i data-v-1a258715="" class="el-icon-close"></i></div></div></div></div><div class="el-dialog__footer"><span data-v-1a258715="" class="dialog-footer"><button data-v-1a258715="" type="button" class="el-button el-button--default"><!----><!----><span>关 闭</span></button></span></div></div></div><div data-v-3027ba37="" class="el-dialog__wrapper homePreface" style="display: none;"><div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog" style="margin-top: 15vh; width: 960px;"><div class="el-dialog__header"><p data-v-3027ba37="" style="font-size: 20px;"><i data-v-3027ba37="" class="el-icon-alarm-clock"></i>本页面已闲置超过6分钟，点击关闭或背景即可回到网页</p><button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div><!----><!----></div></div><div class="el-dialog__wrapper" style="display: none;"><div role="dialog" aria-modal="true" aria-label="扫码登录" class="el-dialog el-dialog--center" style="margin-top: 15vh; width: 440px;"><div class="el-dialog__header"><span class="el-dialog__title">扫码登录</span><button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div><!----><!----></div></div><div data-v-6a303cbe="" class="el-dialog__wrapper" style="display: none;"><div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog el-dialog--center" style="margin-top: 15vh; width: 440px;"><div class="el-dialog__header"><h4 data-v-6a303cbe="" class="fs20 color-red">扫码关注公众号即可使用</h4><!----></div><!----><!----></div></div><div data-v-07f50338="" class="el-dialog__wrapper feedbackDialog" style="display: none;"><div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog el-dialog--center" style="margin-top: 15vh; width: 700px;"><div class="el-dialog__header"><p data-v-07f50338="" style="font-size: 20px;"> 捐赠 <i data-v-07f50338="" class="iconfont icon-airudiantubiaohuizhi-zhuanqu_xianaixin" style="font-size: 20px; color: red;"></i></p><button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div><!----><!----></div></div><div data-v-14c11bf2="" class="el-dialog__wrapper updateFunction" style="display: none;"><div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog el-dialog--center" style="margin-top: 15vh; width: 700px;"><div class="el-dialog__header"><p data-v-14c11bf2="" class="fs20 color-186 font-w">能为您的科研助力是我们最大的荣幸</p><p data-v-14c11bf2="" class="fs16 color-186 font-w">It is our greatest honor to help you with scientific research.</p><!----></div><!----><div class="el-dialog__footer"><span data-v-14c11bf2="" class="dialog-footer"><button data-v-14c11bf2="" type="button" class="el-button color-f bg-186 el-button--default"><!----><!----><span>关 闭</span></button></span></div></div></div><div data-v-1b7b8892=""><div data-v-1b7b8892="" class="el-dialog__wrapper updateFunction noneBorderDialog top0Dialog" style="display: none;"><div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog el-dialog--center" style="margin-top: 15vh; width: 700px;"><div class="el-dialog__header"><p data-v-1b7b8892="" class="fs20 color-186 font-w text-center">如何成为网站年会员？<span data-v-1b7b8892="" class="fs13">（会员请忽略）</span></p><button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div><!----><!----></div></div><div data-v-09cc1b17="" data-v-1b7b8892="" class="el-dialog__wrapper feedbackDialog topEditDialog" style="display: none;"><div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog el-dialog--center" style="margin-top: 15vh; width: 700px;"><div class="el-dialog__header"><p data-v-09cc1b17="" style="font-size: 20px;"> 购买赛特新思普通年会员 </p><button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div><!----><!----></div></div><div data-v-d2ac5df6="" data-v-1b7b8892="" class="el-dialog__wrapper feedbackDialog" style="display: none;"><div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog el-dialog--center" style="margin-top: 15vh; width: 700px;"><div class="el-dialog__header"><p data-v-d2ac5df6="" style="font-size: 20px;"> 订单查补 </p><button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div><!----><div class="el-dialog__footer"><span data-v-d2ac5df6="" class="dialog-footer"><button data-v-d2ac5df6="" type="button" class="el-button el-button--default"><!----><!----><span>取 消</span></button><button data-v-d2ac5df6="" type="button" class="el-button el-button--primary"><!----><!----><span>确 定</span></button></span></div></div></div></div><div data-v-76fe9fd2=""><div data-v-76fe9fd2="" class="el-dialog__wrapper updateFunction noneBorderDialog top0Dialog" style="display: none;"><div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog el-dialog--center" style="margin-top: 15vh; width: 700px;"><div class="el-dialog__header"><span class="el-dialog__title"></span><button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div><!----><!----></div></div></div></div><script charset="utf-8" src="https://hmcdn.baidu.com/static/tongji/plugins/UrlChangeTracker.js"></script><script src="https://hm.baidu.com/hm.js?21490b61879a03667587a4b7869f9b95"></script><script>var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?21490b61879a03667587a4b7869f9b95";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+        var _czc = _czc || [];</script><script type="speculationrules">{
+        "prerender": [
+            {
+                "source": "list",
+                "urls": ["https://www.citexs.com/"]
+            }
+        ]
+    }</script><script src="js/chunk-vendors.1706865258155.js"></script><script src="js/app.1706865258155.js"></script><div id="nprogress" style="transition: none 0s ease 0s; opacity: 1;"><div class="bar" role="bar" style="transform: translate3d(0%, 0px, 0px); transition: all 500ms ease 0s;"><div class="peg"></div></div></div><div class="vue-puzzle-vcode"><div class="vue-auth-box_"><div class="auth-body_" style="height: 160px;"><canvas width="310" height="160" style="width: 310px; height: 160px;"></canvas> <canvas width="310" height="160" class="auth-canvas3_" style="width: 310px; height: 160px;"></canvas> <canvas width="59" height="160" class="auth-canvas2_" style="width: 59px; height: 160px; transform: translateX(0px);"></canvas> <div class="loading-box_ hide_"><div class="loading-gif_"><span></span> <span></span> <span></span> <span></span> <span></span></div></div> <div class="info-box_">
+        
+      </div> <div class="flash_" style="transform: translateX(-92.48px) skew(-30deg, 0deg);"></div> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAELklEQVRYR+2YW2wUZRTH//9vtlCoF9IoIklT3PqgPGi326hoetuaGEhIr9SgCYkkgt2WGOQVCca+GavWdr0GjD4YhG3RB3hply1LQA1tEQIxEXapGI2pEkys9LIzx2ylYWfY6e5sF0oi+7hzzvl+3/9855xvhrjNf7zN+XAHcL4Z+n8o6JWTeYt++W25S596AIZy6TB+n3yo+Nchlk8vmIIVowdXU9c3Q1gDSilBlQwjgBAYFGDvdF58/4milqvZwDpOcXWsb5Uh8hmBqkwXFMhlCN8aX5LXNbRy/T+Z+iXsHAFWRXs3QGQPyLucLDJrK5DgUXdTsxPfjAEro8E3Ce50EtxsKxPTwCPH3U2jTmJkBJgWTnAMxDeGMEoa0xQ+LJQnCD4HYFkCyAC3RdwN3U7gMkpxRTTYrMD91sCJIgCxV5R6O1Jcfy7VwonqLoj9/CqB2kF341qncGkBvRe+ureAWpRgoalCBecMFzcdK24YymZRJz5zprgq1tsJwXYL3CVZGvdGHmwZc7JQtra2gE+f712ep2QUYP714DJhaJrXLqXZQszlZwtYdSHoB9ljVk/ePVrSZFL0ZkAlxzQBVseCT8WhZhRThtFB8plk9Zi/qCi8cv0fNxvKFrDy4oF11NXXIFy2EII4iBcG3Y03VLZT8OqRd5aFPduvOEpxRayvXolxAKB2g6NgEhobBlc1HHYKY7WvHf5wtVAPgegIlbbZ9seUZ7AyFnwewi9pGoUyDmhrB931kfnC1ZwOeKlLP8GZJi6QLSFP2yep4toXSbT3ZQAfX3O6omt8Nhd9r/aHQAUMOQywYBZo5uZD2ThQ2rbPCjlnH6yI9rUryE5DU75ctJaake46Be4DuDjF8dFBNA94/AdtiySVxIlpMlTS8td801o70vMigM9huTda2lhcKHVHPO2HZv/P6LIwX7hk/+qzPSvUJGMkrg8AQYTkroRdXMlE+HH/twsG6BsOdJHYZlaO/lBZ6weOiiSXqs3Gqj0TeAxx+T75DIpgwjC0onD51pQD4JaluPrkR/cpFT9DcoVp84LOgTL/DjtBbglgou+puHwB8lEznPxJw1XSX77VtgizBvQNBw4RMqB7xt4Lc3c8lQKJaQHoO4R8ydz0/7MWoCXk8c85MrMC9J3qaafw/WtQlwXST+F3BnAeYB4obgJ1BJIuG+YtiKAjVOZ/Pd1ZdwzoG+4uBtSPpjaRbhXLcwF3hzytb2TilgVgT5BkYybBrTYC+Rvg5nRpdTRJrIs8+VPXPQXj2i4ItxC4O2NQQUQnN4U9rRcz9nH64p4ceM2lziX5Y4s3KHCdUHwE77ecMkMEp6BwhIa2Z6DslZRvfulgHafYLuCas58WLp2aLCFUga70qxOFU6dPFL2W1feYeaU43Y5z/TxnCuYabMEuC043ckdBp4pZ7f8FE5psOI1g6fwAAAAASUVORK5CYII=" class="reset_"></div> <div class="auth-control_"><div class="range-box" style="height: 50px;"><div class="range-text">拖动滑块完成拼图</div> <div class="range-slider" style="width: 50px;"><div class="range-btn" style="width: 50px;"><div></div> <div></div> <div></div></div></div></div></div></div></div><div class="v-modal" tabindex="0" style="z-index: 2000;"></div></body></html>
